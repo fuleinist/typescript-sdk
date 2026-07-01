@@ -63,6 +63,12 @@ export { WebStandardStreamableHTTPServerTransport } from './server/streamableHtt
 // runtime-aware wrapper (shadows core/public's fromJsonSchema with optional validator)
 export { fromJsonSchema } from './fromJsonSchema';
 
+// JSON Schema validators — exported from root to match type declarations
+// (subpath exports at ./validators/ajv and ./validators/cf-worker also work).
+export { Ajv, addFormats, AjvJsonSchemaValidator } from '@modelcontextprotocol/core-internal/validators/ajv';
+export type { CfWorkerSchemaDraft } from '@modelcontextprotocol/core-internal/validators/cfWorker';
+export { CfWorkerJsonSchemaValidator } from '@modelcontextprotocol/core-internal/validators/cfWorker';
+
 // Inbound HTTP request classification (dual-era serving): the body-primary era
 // predicate used by createMcpHandler, exported for hand-wired compositions.
 export type {
